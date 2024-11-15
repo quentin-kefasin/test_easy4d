@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block body %}
+    
+    <div class="container mt-4">
+        <a href="{{ path('app_product_index') }}" class="btn btn-outline-primary mb-3">Voir tous les produits</a>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-secondary">Détail du produit</h1>
+            <div class="d-flex gap-2">
+                <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-warning">
+                    Modifier
+                </a>
+                {{ include('product/_delete_form.html.twig', { 'attr': {'class': 'd-inline-block'} }) }}
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>EasyCode</th>
+                <td>{{ product.easyCode }}</td>
+            </tr>
+            <tr>
+                <th>EanCode</th>
+                <td>{{ product.eanCode }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ product.designation }}</td>
+            </tr>
+            <tr>
+                <th>Segment</th>
+                <td>{{ product.segment }}</td>
+            </tr>
+            <tr>
+                <th>Width</th>
+                <td>{{ product.width }}</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>{{ product.height }}</td>
+            </tr>
+            <tr>
+                <th>Diameter</th>
+                <td>{{ product.diameter }}</td>
+            </tr>
+            <tr>
+                <th>Construction</th>
+                <td>{{ product.construction }}</td>
+            </tr>
+            <tr>
+                <th>SpeedIndex</th>
+                <td>{{ product.speedIndex }}</td>
+            </tr>
+            <tr>
+                <th>LoadIndex</th>
+                <td>{{ product.loadIndex }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
